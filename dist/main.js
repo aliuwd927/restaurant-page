@@ -1,1 +1,1 @@
-(()=>{"use strict";const e=(document.createElement("div"),void console.log("calling"));document.querySelector("#content").appendChild(e())})();
+(()=>{"use strict";!function(){const e=document.querySelector(".content"),t=document.createElement("div");t.classList.add("navMenuCont"),e.appendChild(t)}()})();
