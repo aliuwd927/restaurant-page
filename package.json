@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "odin restaurant page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliuwd927/restaurant-page.git"
+  },
+  "author": "Andy Liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliuwd927/restaurant-page/issues"
+  },
+  "homepage": "https://github.com/aliuwd927/restaurant-page#readme",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0"
+  }
+}
