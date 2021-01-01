@@ -2,11 +2,19 @@
 
 function navMenuDOM(){
    const content = document.querySelector('.content');
-    const navMenuContainer = document.createElement('div');
-    
-    navMenuContainer.classList.add('navMenuCont');
+   
+   const navMenuContainer = document.createElement('div');
+   const navMenuUL = document.createElement('ul');
+   
 
-    content.appendChild(navMenuContainer);
+   
+   
+   navMenuContainer.classList.add('navMenuCont');
+   navMenuUL.classList.add('navUL');
+   
+
+   content.appendChild(navMenuContainer);
+   navMenuContainer.appendChild(navMenuUL);
 
 }
 
