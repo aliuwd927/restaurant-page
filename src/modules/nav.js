@@ -1,3 +1,4 @@
+import { create, remove } from "lodash";
 
 
 function navMenuDOM(){
@@ -19,7 +20,7 @@ function navMenuDOM(){
 
       for(let i=0; i < 3; i++){
          const navLi = document.createElement('li');
-         navLi.classList.add('navLi',i);
+         navLi.classList.add('navLi');
          arrayLi.push(navLi);
          getUL.appendChild(navLi);
       }
@@ -42,11 +43,53 @@ function navMenuDOM(){
          }
       });
 
-      return{
 
-      }
    })();
 
-}
+
+   const responsiveDOMUL = () =>{
+      //console.log('triggerd');
+      const getUL = document.querySelector('.navUL');
+
+      const btnMenu = document.createElement('button');
+      btnMenu.classList.add('mobileMenu');
+      btnMenu.textContent = 'Drop Down';
+     
+
+      getUL.appendChild(btnMenu);
+
+   return{
+      getUL,
+      btnMenu
+   }
+
+   };
+
+   const getScrnRes = (()=>{
+      let scrnResW = window.screen.width;
+      let scrnResH = window.screen.height;
+      
+      if(scrnResW <= 900){
+         console.log(scrnResW);
+        
+         let removeLi = document.querySelectorAll('.navLi');
+
+         for(let i = 0; i < removeLi.length; i++){
+            createLi.getUL.removeChild(removeLi[i]);
+         };
+
+         responsiveDOMUL();
+
+      }
+      return{
+         scrnResW,
+         scrnResH,
+      };
+
+   })();
+
+   
+
+};
 
 export default navMenuDOM;
