@@ -47,16 +47,39 @@ function navMenuDOM(){
    })();
 
 
+   const createLiMobile = () => {
+      //console.log('triggered');
+
+     console.log(arrayLi);
+     
+   }
+
+
    const responsiveDOMUL = () =>{
       //console.log('triggerd');
       const getUL = document.querySelector('.navUL');
 
-      const btnMenu = document.createElement('button');
+      const btnMenu = document.createElement('div');
       btnMenu.classList.add('mobileMenu');
-      btnMenu.textContent = 'Drop Down';
-     
+      btnMenu.innerHTML = `<i style = 'font-size: 48px'class="fa fa-bars"></i>`;
+      
 
       getUL.appendChild(btnMenu);
+
+      btnMenu.addEventListener('click',(e)=>{
+         
+         e.preventDefault();
+
+         const appendTogetUL = document.querySelector('.navUL');
+
+         const mobileDropMenu = document.createElement('div');
+         mobileDropMenu.classList.add('mobileDrpMenu');
+
+         appendTogetUL.appendChild(mobileDropMenu);
+
+         createLiMobile();
+
+      });
 
    return{
       getUL,
