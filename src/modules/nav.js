@@ -49,10 +49,29 @@ function navMenuDOM(){
 
    const createLiMobile = () => {
       //console.log('triggered');
+      //console.log(arrayLi);
 
-     console.log(arrayLi);
+      const mobileMenu = document.querySelector('.mobileDrpMenu');
+
+      for(let i = 0; i < 3; i++){
+         const mobileNavLi = document.createElement('li');
+         mobileNavLi.classList.add('mobileNavLi');
+         arrayLi.push(mobileNavLi);
+         mobileMenu.appendChild(mobileNavLi);
+      }
+
+      arrayLi.forEach((element,index)=>{
+         console.log(element, index);
+         if(index === 3){
+            arrayLi[3].innerHTML = `<a href="#" class="tabs__link">Home</a>`;
+         }else if(index === 4){
+            arrayLi[4].innerHTML = `<a href="#" class="tabs__link">Menu</a>`;
+         }else if(index === 5){
+            arrayLi[5].innerHTML = `<a href="#" class="tabs__link">Contact</a>`;
+         }
+      });
      
-   }
+   };
 
 
    const responsiveDOMUL = () =>{
@@ -70,15 +89,20 @@ function navMenuDOM(){
          
          e.preventDefault();
 
+         if(e.target.parentElement.nextElementSibling === 'mobileDrpMenu'){
+            console.log('true');
+         }else{
          const appendTogetUL = document.querySelector('.navUL');
 
          const mobileDropMenu = document.createElement('div');
-         mobileDropMenu.classList.add('mobileDrpMenu');
+         mobileDropMenu.classList.toggle('mobileDrpMenu');
 
          appendTogetUL.appendChild(mobileDropMenu);
 
          createLiMobile();
 
+         console.log(e);
+         }
       });
 
    return{

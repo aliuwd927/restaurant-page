@@ -51,15 +51,21 @@ body{
 }
 
 @media screen and (max-width: 900px){
-
+.content{
+    display: flex;
+    flex-direction: column;
+}
 .navUL{
     display: flex;
     flex-direction: column;
 }
 
- .mobileMenu{
+ .mobileDrpMenu{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+
  }   
 
 }
