@@ -70,6 +70,8 @@ function navMenuDOM(){
             arrayLi[5].innerHTML = `<a href="#" class="tabs__link">Contact</a>`;
          }
       });
+
+     
      
    };
 
@@ -83,31 +85,43 @@ function navMenuDOM(){
       btnMenu.innerHTML = `<i style = 'font-size: 48px'class="fa fa-bars"></i>`;
       
 
+      const showDisplay = () =>{
+         const x = document.querySelector('.mobileDrpMenu');
+
+         if(x.style.display == 'flex'){
+            x.style.display = 'none';
+            console('flex');
+         }else{
+            console.log('none');
+            x.style.display = 'flex';
+         }
+      }
+
+
       getUL.appendChild(btnMenu);
 
       btnMenu.addEventListener('click',(e)=>{
          
          e.preventDefault();
-
-         if(e.target.parentElement.nextElementSibling === 'mobileDrpMenu'){
-            console.log('true');
-         }else{
+         
          const appendTogetUL = document.querySelector('.navUL');
 
          const mobileDropMenu = document.createElement('div');
          mobileDropMenu.classList.toggle('mobileDrpMenu');
 
          appendTogetUL.appendChild(mobileDropMenu);
-
+         showDisplay();
          createLiMobile();
 
-         console.log(e);
-         }
+         
       });
+
+      
 
    return{
       getUL,
-      btnMenu
+      btnMenu,
+      showDisplay
    }
 
    };
